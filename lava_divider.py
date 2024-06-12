@@ -1,5 +1,6 @@
 # This program uses subprocessto give command and open the main script 
 # It starts the script for Request blockchain Data using (lava RPC-ENDPOINT)
+# Adjust the range() with the number oo the RPC key you have
 
 import time,os
 import subprocess
@@ -11,4 +12,5 @@ while start:
         time.sleep(2)
     print('WAITING FOR THE NEXT 20 MINUTE BEFORE SENDING AGAIN')
     sys.exit()
-    #time.sleep(1800)
+    # Request Every 5 min , Adjust Base On Your Choice
+    time.sleep(300)
