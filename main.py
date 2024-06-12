@@ -3,19 +3,10 @@ print('BOOOOOM')
 import requests,json,sys,os
 import telegram,asyncio
 
-LAVA_0 = 'https://eth1.lava.build/lava-referer-1b4b6ccb-ee4c-4a76-bf67-6f694f391fdc/'
-LAVA_1 = 'https://eth1.lava.build/lava-referer-a405b758-f332-411f-8157-558aa65e7f5b/'
-LAVA_2 = 'https://eth1.lava.build/lava-referer-e1f76db8-9f7c-4dfe-a9b4-332e16b1ed54/'
-LAVA_3 = 'https://eth1.lava.build/lava-referer-442e0329-d146-47af-aae4-70ab18de28bc/'
-LAVA_4 = 'https://eth1.lava.build/lava-referer-fa10926f-38eb-4e41-88f4-4a0c0b424ac9/'
-LAVA_5 = 'https://eth1.lava.build/lava-referer-ba7ba48d-ce2e-4fc7-92ac-1c9b36ff7b6c/'
-LAVA_6 = 'https://eth1.lava.build/lava-referer-3e7319ce-9c8c-408b-9ffc-7012c06b2f73/'
-LAVA_7 = 'https://eth1.lava.build/lava-referer-9dd4c088-a59f-43c4-843d-8fec8ec4cef2/'
-LAVA_8 = 'https://eth1.lava.build/lava-referer-5d42f6eb-ba0c-4bdf-9eaa-1ae3df04df2e/'
-LAVA_9 = 'https://eth1.lava.build/lava-referer-38be6e34-9e91-423e-9538-a4b1973364a7/'
-LAVA_11 = 'https://eth1.lava.build/lava-referer-008a60d9-32a9-43d3-871f-2287dc628f3f/'
-LAVA_12 = 'https://eth1.lava.build/lava-referer-4592cc52-b007-453e-80e5-c3473e785c10/'
-LAVA_13 = 'https://eth1.lava.build/lava-referer-8be00310-8398-4a08-bfbd-7d24949e6893/'
+# You can add the string of a many of your RPC key using the conventio lava_1,lava_2 etc
+LAVA_0 = ''
+
+
 
 def getBlockNumber(RPC_ENDPOINT):
     payload = {
@@ -96,14 +87,15 @@ def get_balance(RPC_ENDPOINT):
 
   
 def Alert(account):
-    bot_token = '6348189496:AAEa_9d8h-FPAG_OICpIq6rV8E0k3roPhvY'
+    # Get Your Telegram bot token
+    bot_token = ''
     async def main():
         try:
             bot =  telegram.Bot(bot_token)
         except:
             bot = telegram.Bot(bot_token)
         async with bot:
-            await bot.send_message(text=f'(RPC) Request Completed\n\nSYBIL_NAME: {account}',chat_id=963648721)
+            await bot.send_message(text=f'(RPC) Request Completed\n\nSYBIL_NAME: {account}',chat_id= # YOUR Telegram Chat Id)
     if __name__ == '__main__':
         asyncio.run(main())
 
